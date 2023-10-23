@@ -1,0 +1,336 @@
+@import url('https://kums.dev/static/fonts/gluten.css');
+@import url('utils.css');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+*:focus-visible {
+	outline: 0.25rem dashed #a61e4d;
+	border-radius: 0.25rem;
+}
+
+:root {
+	--header-height: 3rem;
+	scroll-behavior: smooth;
+	scroll-padding-top: 1rem;
+}
+:root,
+input,
+select,
+button {
+	font-family: 'Gluten', cursive;
+}
+
+.skip-content {
+	position: absolute;
+	color: #ffdeeb !important;
+	background-color: #a61e4d;
+	font-size: 2rem;
+	padding: 0.7rem 1.2rem;
+	border-radius: 1rem;
+	top: 1rem;
+	left: 1rem;
+	z-index: 2023;
+}
+
+.skip-content:not(:focus-visible) {
+	clip-path: polygon(0 0);
+	overflow: hidden;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #ffdeeb;
+	color: #f06595;
+	overflow-x: hidden;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+header,
+footer {
+	padding: 0.5rem 1.5rem;
+	height: var(--header-height);
+	background-color: #fcc2d7;
+}
+
+header {
+	display: grid;
+	place-items: center;
+}
+
+header nav {
+	display: flex;
+	gap: 1rem;
+}
+
+header nav,
+main {
+	width: 100%;
+	max-width: var(--max-width, 1024px);
+	margin: auto;
+}
+
+main {
+	padding: 1.5rem 2rem;
+	min-height: calc(100vh - 2 * var(--header-height));
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+:is(header, footer) a {
+	color: #e64980;
+}
+
+:is(header, footer) a:hover::after {
+	background-color: #e64980;
+}
+
+a {
+	text-decoration: none;
+	color: #f783ac;
+	transition: color 150ms ease-in-out;
+	position: relative;
+	white-space: nowrap;
+	font-size: 1.025rem;
+}
+
+a:hover {
+	color: #d6336c;
+}
+
+a::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	bottom: -1px;
+	height: 2px;
+	border-radius: 9px;
+	background-color: #f783ac;
+	transition: left 150ms ease-in-out, right 150ms ease-in-out,
+		background-color 150ms ease-in-out 50ms;
+}
+
+a:hover::after {
+	background-color: #d6336c;
+	left: 0;
+	right: 0;
+}
+
+h2,
+h2 > a {
+	font-size: 1.5rem;
+	color: #f06595;
+}
+
+h1 {
+	color: #e64980;
+	text-align: center;
+	font-size: 3rem;
+	padding-block: 1rem;
+}
+
+:is(h1, h2)::before,
+:is(h1, h2)::after {
+	color: #f783ac;
+	display: inline-block;
+	scale: 0.8;
+}
+
+:is(h1, h2)::before {
+	content: '>';
+	margin-right: 0.25ch;
+}
+
+:is(h1, h2)::after {
+	content: '<';
+	margin-left: 0.25ch;
+}
+
+:is(h1, h2):has(> *)::before {
+	margin-right: -0.5ch;
+}
+
+:is(h1, h2):has(> *)::after {
+	margin-left: -0.5ch;
+}
+
+article {
+	margin-block: 2rem;
+}
+
+.card {
+	border-radius: 1rem;
+	background-color: #fcc2d7;
+	padding: 1.5rem;
+	margin-block: 1rem;
+	line-height: 1.5;
+}
+
+.card a {
+	color: #f06595;
+	font-weight: 700;
+}
+
+.card figure {
+	max-width: 300px;
+	border: 0.25rem solid #e64980;
+	background-color: #faa2c1;
+	color: #d6336c;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-left: 1rem;
+	float: right;
+}
+
+.card figcaption {
+	text-align: center;
+}
+
+.card :is(p + p) {
+	margin-top: 1rem;
+}
+
+.card h2 {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+	.card figure {
+		max-width: 250px;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	footer {
+		justify-content: center;
+	}
+
+	footer > :first-child {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.card figure {
+		max-width: 100%;
+		margin-inline: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: 2.4rem;
+	}
+
+	header nav {
+		gap: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.card figure {
+		margin-inline: 0;
+	}
+
+	h1 {
+		font-size: 1.75rem;
+	}
+}
+
+strong {
+	font-size: 1.2rem;
+	font-weight: 900;
+}
+
+del {
+	text-decoration-thickness: 2px;
+}
+
+@keyframes animate-rotate {
+	from {
+		rotate: -20deg;
+	}
+
+	to {
+		rotate: 20deg;
+	}
+}
+
+@keyframes animate-scale {
+	from {
+		scale: 0.6;
+	}
+
+	to {
+		scale: 1.2;
+	}
+}
+
+@keyframes animate-translate {
+	from {
+		translate: -20%;
+	}
+
+	to {
+		translate: 20%;
+	}
+}
+
+@media not (prefers-reduced-motion) {
+	.animate-all {
+		z-index: 2;
+		animation: animate-rotate 0.5s 50ms ease-in-out infinite alternate,
+			animate-translate 1.1s 50ms ease-in-out infinite alternate,
+			animate-scale 0.85s 50ms ease-in-out infinite alternate;
+	}
+}
+
+input {
+	accent-color: #e64980;
+}
+
+input:is([type='text'], [type='number'], [type='password'], [type='color']),
+select {
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	background-color: #ffdeeb;
+	border: 2px solid #f783ac;
+	color: #e64980;
+}
+
+input[type='color'] {
+	padding: 0.1rem;
+}
+
+button {
+	color: #d6336c;
+	border-radius: 1.5rem;
+	background-color: #faa2c1;
+	border: 2px solid #f06595;
+	padding: 0.75rem 1.5rem;
+	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+	cursor: pointer;
+}
+
+button:is(:hover, :focus-visible) {
+	border-radius: 1.5rem;
+	background-color: #fcc2d7;
+	color: #e64980;
+}

@@ -1,0 +1,59 @@
+.ml-auto {
+	margin-left: auto;
+}
+
+.mx-auto {
+	margin-inline: auto;
+}
+
+.my-4 {
+	margin-block: 1rem;
+}
+
+.mb-2 {
+	margin-bottom: 0.5rem;
+}
+
+.relative {
+	position: relative;
+}
+
+.w-fit {
+	width: fit-content;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+}
+
+.gap-2 {
+	gap: 0.5rem;
+}
+
+.gap-4 {
+	gap: 1rem;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}

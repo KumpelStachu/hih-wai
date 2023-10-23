@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kotodziewczynogenerator</title>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="styles/base.css" />
+		<link rel="stylesheet" href="styles/generator.css" />
+		<link rel="stylesheet" href="styles/jquery-ui.css" />
+		<script defer src="scripts/year.js"></script>
+		<script defer src="scripts/back.js"></script>
+		<script defer src="scripts/jquery.js"></script>
+		<script defer src="scripts/jquery-ui.js"></script>
+		<script defer src="scripts/generator.js"></script>
+		<script defer data-domain="php.code.kums.dev" src="https://a.kums.me/js/script.js"></script>
+	</head>
+	<body>
+		<div id="success-dialog" title="Gratulacje użytkowniku!" style="display: none">
+			<div>Oto twoja kotodziewczyna:</div>
+			<div id="image"></div>
+		</div>
+		<div id="error-dialog" title="Wystąpił błąd!" style="display: none">
+			Nie udało się stworzyć kotodziewczyny :(
+		</div>
+		<div id="loading-dialog" title="Generowanie" style="display: none">
+			<div id="progressbar"></div>
+		</div>
+
+		<a href="#content" class="skip-content">Skip to form</a>
+
+		<header>
+			<a href="index.html" data-back>Cofnij się do tyłu</a>
+		</header>
+
+		<main id="content" class="relative">
+			<h1>Kotodziewczynogenerator</h1>
+
+			<form action="odbierz.php" method="post" class="card relative">
+				<a href="#footer" class="skip-content">Skip to footer</a>
+				<label for="name">Imię</label>
+				<input type="text" id="name" name="name" required />
+
+				<label>Płeć</label>
+				<div>
+					<div>
+						<input type="radio" id="genderf" name="gender" value="female" checked />
+						<label for="genderf">dziewczyna</label>
+					</div>
+					<div>
+						<input type="radio" id="gendernf" name="gender" value="not female" disabled />
+						<label for="gendernf">niedziewczyna</label>
+					</div>
+				</div>
+
+				<label for="hair-color">Kolor włosów</label>
+				<input type="color" id="hair-color" name="hair-color" value="#f783ac" />
+
+				<label for="hair-length">Długość włosów</label>
+				<select id="hair-length" name="hair-length" required>
+					<optgroup label="Normalne">
+						<option value="short">Krótkie</option>
+						<option value="medium" selected>Średnie</option>
+						<option value="long">Długie</option>
+					</optgroup>
+					<optgroup label="Bardzo normalne">
+						<option value="very short">Bardzo krótkie</option>
+						<option value="very medium">Bardzo średnie</option>
+						<option value="very long">Bardzo długie</option>
+					</optgroup>
+				</select>
+
+				<label for="eye-color">Kolor oczu</label>
+				<input type="color" id="eye-color" name="eye-color" value="#d6336c" />
+
+				<label for="age">Wiek</label>
+				<input type="number" id="age" name="age" min="18" step="1" required />
+
+				<label for="api-key">OpenAI API Key</label>
+				<input type="password" id="api-key" name="api-key" required />
+
+				<button type="submit">Wyślij</button>
+				<button type="button" class="skip-content">Generuj</button>
+				<button type="reset">Zacznij od nowa</button>
+			</form>
+		</main>
+
+		<footer id="footer">
+			<span>Lubię kotodziewczyny</span>
+			<span>
+				Copyright &copy; <span id="year">2022</span>&ensp;
+				<a href="https://github.com/KumpelStachu" target="_blank">Stanisław Rzeszut</a>
+			</span>
+		</footer>
+	</body>
+</html>
