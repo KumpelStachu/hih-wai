@@ -48,3 +48,20 @@ section + section {
 	z-index: 1;
 	border-radius: 5%;
 }
+
+#colorbox {
+	z-index: 9999 !important;
+}
+
+#colorbox img {
+	background-color: #faa2c1;
+	border: 3px solid #e64980;
+	max-width: 60vw;
+	max-height: 60vh;
+}
+
+#cboxOverlay {
+	position: fixed;
+	inset: 0;
+	background-color: #e649807f;
+}

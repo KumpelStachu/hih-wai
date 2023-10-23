@@ -1,27 +1,27 @@
-declare function $(selector: string): {
-	progressbar(options: string | { value: boolean }): ReturnType<typeof $>
-	dialog(
-		options:
-			| 'open'
-			| 'close'
-			| Partial<{
-					autoOpen: boolean
-					closeOnEscape: boolean
-					resizable: boolean
-					modal: boolean
-					width: number
-					close(): void
-					open(): void
-			  }>
-	): ReturnType<typeof $>
-}
+// declare function $(selector: string): {
+// 	progressbar(options: string | { value: boolean }): ReturnType<typeof $>
+// 	dialog(
+// 		options:
+// 			| 'open'
+// 			| 'close'
+// 			| Partial<{
+// 					autoOpen: boolean
+// 					closeOnEscape: boolean
+// 					resizable: boolean
+// 					modal: boolean
+// 					width: number
+// 					close(): void
+// 					open(): void
+// 			  }>
+// 	): ReturnType<typeof $>
+// }
 
 const SIZE = 256
 
 const form = document.querySelector('form')!
 const btn = document.querySelector<HTMLInputElement>('input[type=button]')!
 
-const progressbar = $('#loading-dialog').progressbar({
+$('#loading-dialog').progressbar({
 	value: false,
 })
 
