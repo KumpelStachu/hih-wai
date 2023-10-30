@@ -56,8 +56,8 @@ section + section {
 #colorbox img {
 	background-color: #faa2c1;
 	border: 3px solid #e64980;
-	max-width: 60vw;
-	max-height: 60vh;
+	max-width: 90vw;
+	max-height: 80vh;
 }
 
 #cboxOverlay {

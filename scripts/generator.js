@@ -15,9 +15,9 @@
 // 			  }>
 // 	): ReturnType<typeof $>
 // }
-const SIZE = 256;
+const SIZE = 1024;
 const form = document.querySelector('form');
-const btn = document.querySelector('input[type=button]');
+const btn = document.querySelector('button[type=button]');
 $('#loading-dialog').progressbar({
     value: false,
 });
@@ -95,7 +95,7 @@ btn.addEventListener('click', async () => {
     console.log({ eyeColor });
     const hairColor = await getColorName(params.hairColor);
     console.log({ hairColor });
-    const url = await generateImage(params);
+    const url = await generateImage({ ...params, eyeColor, hairColor });
     if (!url) {
         dialogError.dialog('open');
         return;
