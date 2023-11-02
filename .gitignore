@@ -2,4 +2,3 @@ node_modules/
 wymagania.pdf
 .secret*
 *.zip
-scripts/*.js
